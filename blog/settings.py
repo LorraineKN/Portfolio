@@ -52,13 +52,18 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'blog.urls'
 
+# settings.py
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [
+            BASE_DIR / "templates",  # This will look for templates in the root "templates" folder
+        ],
+        'APP_DIRS': True,  # This tells Django to look for a "templates" folder within each app
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -66,6 +71,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
@@ -112,10 +118,20 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
+# Static files (CSS, JavaScript, images)
+STATIC_URL = '/static/'
 
-STATIC_URL = 'static/'
+# Add this if you want to serve static files outside the app directories (e.g., in a "static" folder at the root of the project)
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # For example, static files in the root static folder
+]
+
+# Collect all static files into a single location during deployment
+STATIC_ROOT = BASE_DIR / "staticfiles"  # The directory to collect static files for production (you can leave this for local development)
+
+# Media files (user-uploaded files)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"  # Location of media files
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

@@ -1,0 +1,103 @@
+/* style.css */
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.light-theme {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+.dark-theme {
+    background-color: #111111;
+    color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.cover {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.summary {
+    font-style: italic;
+    margin: 1rem 0;
+    color: #555;
+}
+
+.content {
+    margin-top: 1.5rem;
+}
+
+.tags {
+    margin-top: 2rem;
+}
+
+.tag {
+    display: inline-block;
+    background: #e0e0e0;
+    color: #333;
+    padding: 0.4em 0.8em;
+    margin: 0.2em;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.dark-theme .tag {
+    background: #333;
+    color: #f0f0f0;
+}
+
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+.theme-toggle button {
+    padding: 0.5em 1em;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dark-theme .theme-toggle button {
+    background: #fff;
+    color: #000;
+}
